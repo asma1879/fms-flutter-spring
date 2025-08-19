@@ -25,9 +25,9 @@ fms-flutter-spring/
 │
 ├── freelance_app/ (Flutter)
 │   ├── lib/
-│   │   ├── models/         # Data models (Job, Bid, User, Message, Payment, etc.)
+│   │   ├── models/         # Data models
 │   │   ├── services/       # API calls to backend
-│   │   ├── screens/        # UI Screens (Login, Register, Dashboard, Wallet, etc.)
+│   │   ├── screens/        # UI Screens 
 │   │   ├── providers/      # State management
 │   │   └── main.dart       # App entry point
 │   └── pubspec.yaml
@@ -76,7 +76,7 @@ fms-flutter-spring/
 
 ### Database
 - MySQL 8
-- ER Model includes: Users, Jobs, Bids, Messages, Payments, Wallet, Transactions
+
 
 ---
 
