@@ -134,6 +134,55 @@ fms-flutter-spring/
 
 ---
 
+### Screenshots
+
+Login Page:
+
+
+
+<img width="432" height="451" alt="Login_Flutter" src="https://github.com/user-attachments/assets/f3b81e9e-f84f-402d-b4ea-bc776478179f" />
+
+
+
+Dashboard(Role:Freelancer):
+
+
+
+<img width="1365" height="728" alt="DashboardF" src="https://github.com/user-attachments/assets/11d7663c-15dc-4e13-8721-300d14c6fd8d" />
+
+
+Delivery Summary Report(Role:Freelancer):
+
+
+
+<img width="1363" height="727" alt="Delivery_Summary" src="https://github.com/user-attachments/assets/9ecf06dc-ecac-4fc5-a5ff-8afd82e83fc1" />
+
+
+Delivered Jobs(Role:Client):
+
+
+
+<img width="1365" height="731" alt="Delivered_JobsF" src="https://github.com/user-attachments/assets/f2af91ef-7388-4a16-a183-b989f97ac00b" />
+
+
+
+Job Bids (Role:Client):
+
+<img width="1365" height="726" alt="BidsF" src="https://github.com/user-attachments/assets/25793272-e8f8-4976-8bce-d69d3fca09bf" />
+
+
+Wallet(Role:Client):
+
+
+<img width="1361" height="728" alt="WalletR" src="https://github.com/user-attachments/assets/1dc60a7f-5b08-408c-8cdf-39956a51e5de" />
+
+
+Reviews(Role:Client):
+
+
+<img width="1365" height="727" alt="Reviews" src="https://github.com/user-attachments/assets/176a33a3-02d9-4481-8ac5-66851d5b78dc" />
+
+
 
 ## 📜 License
 
