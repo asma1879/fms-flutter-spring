@@ -68,14 +68,7 @@ public class BidController {
         return bidDAO.saveBid(bid);
     }
 
-//    @GetMapping("/job/{jobId}")
-//    public List<Bid> getBidsForJob(@PathVariable Long jobId) {
-//        Job job = jobDAO.getJobById(jobId);
-//        if (job == null) {
-//            throw new RuntimeException("Job with id " + jobId + " not found");
-//        }
-//        return bidDAO.getBidsByJob(job);
-//    }
+
     @GetMapping("/job/{jobId}")
     public List<BidDTO> getBidsForJob(@PathVariable Long jobId) {
         List<Bid> bids = bidDAO.getBidsByJob(jobDAO.getJobById(jobId));
