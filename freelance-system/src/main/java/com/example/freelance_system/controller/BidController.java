@@ -113,49 +113,7 @@ public class BidController {
         return ResponseEntity.ok("Job delivered");
     }
 
-   
-//    @PostMapping("/{bidId}/confirm-payment")
-//    public ResponseEntity<String> confirmPayment(@PathVariable Long bidId) {
-//        try {
-//            Bid bid = bidDAO.findById(bidId);
-//            if (bid == null || !"DELIVERED".equalsIgnoreCase(bid.getDeliveryStatus())) {
-//                return ResponseEntity.badRequest().body("Invalid or undelivered bid");
-//            }
-//
-//            if (bid.isPaidToFreelancer()) {
-//                return ResponseEntity.badRequest().body("Payment already released");
-//            }
-//
-//            User systemAccount = userDAO.getUserById(9L);
-//            User freelancer = bid.getFreelancer();
-//            double amount = bid.getAmount();
-//
-//            if (systemAccount.getWalletBalance() < amount) {
-//                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("System has insufficient funds");
-//            }
-//
-//            // Calculate amounts
-//            double freelancerAmount = amount * 0.90; // 90%
-//            double systemCommission = amount * 0.10; // 10%
-//
-//            // Deduct full amount from system account (escrow)
-//            systemAccount.setWalletBalance(systemAccount.getWalletBalance() - amount);
-//
-//            // Add 90% to freelancer
-//            freelancer.setWalletBalance(freelancer.getWalletBalance() + freelancerAmount);
-//
-//            // System keeps 10% commission (already deducted from walletBalance)
-//
-//            userDAO.update(systemAccount);
-//            userDAO.update(freelancer);
-//            bidDAO.markAsPaid(bidId); // mark bid as paid
-//
-//            return ResponseEntity.ok("Payment released to freelancer with 10% commission kept by system.");
-//        } catch (Exception e) {
-//            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Payment release failed.");
-//        }
-//    }
-
+ 
     @PostMapping("/{bidId}/confirm-payment")
     public ResponseEntity<String> confirmPayment(@PathVariable Long bidId) {
     	System.out.println("confirmPayment called for bidId: " + bidId);
@@ -232,10 +190,7 @@ public class BidController {
         return ResponseEntity.ok(delivered);
     }
     
-//    @GetMapping("/freelancer/{freelancerId}")
-//    public List<Bid> getBidsByFreelancer(@PathVariable Long freelancerId) {
-//        return bidDAO.getBidsByFreelancerId(freelancerId);
-//    }
+
     @GetMapping("/freelancer/{freelancerId}")
     public List<BidDTO> getBidsByFreelancer(@PathVariable Long freelancerId) {
         List<Bid> bids = bidDAO.getBidsByFreelancerId(freelancerId);
@@ -257,34 +212,7 @@ public class BidController {
         }).toList();
     }
 
-//    @PostMapping("/{bidId}/accept")
-//    public ResponseEntity<String> acceptBidAndHoldFunds(@PathVariable Long bidId) {
-//        try {
-//            Bid bid = bidDAO.findById(bidId);
-//            if (bid == null) return ResponseEntity.badRequest().body("Bid not found");
-//
-//            User client = bid.getJob().getClient();
-//            User systemAccount = userDAO.getUserById(9L); // system wallet
-//            double amount = bid.getAmount();
-//
-//            if (client.getWalletBalance() < amount) {
-//                return ResponseEntity.badRequest().body("Insufficient balance");
-//            }
-//
-//            // Transfer to system wallet
-//            client.setWalletBalance(client.getWalletBalance() - amount);
-//            systemAccount.setWalletBalance(systemAccount.getWalletBalance() + amount);
-//
-//            userDAO.update(client);
-//            userDAO.update(systemAccount);
-//            bidService.updateBidStatus(bidId, "ACCEPTED");
-//
-//            return ResponseEntity.ok("Bid accepted and amount held in escrow.");
-//        } catch (Exception e) {
-//            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error accepting bid.");
-//        }
-//    }
-    
+  
     @PostMapping("/{bidId}/accept")
     public ResponseEntity<String> acceptBidAndHoldFunds(@PathVariable Long bidId) {
         try {
